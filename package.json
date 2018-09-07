@@ -1,0 +1,11 @@
+{
+  "name": "bjsfaserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:malun666/bjsfaserver.git",
+  "author": "malun <malun666@126.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.2"
+  }
+}
