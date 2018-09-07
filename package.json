@@ -6,6 +6,8 @@
   "author": "malun <malun666@126.com>",
   "license": "MIT",
   "dependencies": {
-    "koa": "^2.5.2"
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "koa-static2": "^0.1.8"
   }
 }
