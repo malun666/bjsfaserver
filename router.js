@@ -6,4 +6,6 @@ router.get('/', (ctx) => {
 });
 
 router.get('/user/:id', controllers.User.getUser);
+router.post('/user', controllers.User.postUser);
+
 module.exports = router;

@@ -1,9 +1,10 @@
 const path = require('path');
 const Koa = require('koa');
-const app = new Koa();
+const koaBody = require('koa-body');
 const serverStatic = require('koa-static2')
-
 const logger = require('koa-logger');
+
+const app = new Koa();
 const loggerWriter = require('./common/log');
 
 app.use(logger((str, args) => {
@@ -11,11 +12,19 @@ app.use(logger((str, args) => {
 }));
 
 // 设置静态目录
-app.use(serverStatic('/public', path.join(__dirname, 'public')))
+app.use(serverStatic('/pub', path.join(__dirname, 'public')))
+
 
 const router = require('./router.js');
 
+app.use(koaBody());
 app.use(router.routes());
 app.use(router.allowedMethods());
+
+// 异常处理
+app.on('error', function(err) {
+  console.log('logging error ', err.message);
+  loggerWriter.error(err);
+});
 
 app.listen(3002);

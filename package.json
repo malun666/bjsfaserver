@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-static2": "^0.1.8",
