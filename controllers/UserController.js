@@ -22,6 +22,7 @@ module.exports = {
     try {
       let user = await db.User.findById(ctx.params.id);
       ctx.body = user;
+      console.log(ctx.state)
     } catch(e) {
       ctx.body = {error: '添加失败！'};
       logger.error(e);

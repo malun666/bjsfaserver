@@ -6,9 +6,11 @@
   "author": "malun <malun666@126.com>",
   "license": "MIT",
   "dependencies": {
+    "jwt-simple": "^0.5.1",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
     "koa-cors": "^0.0.16",
+    "koa-jwt": "^3.5.1",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-static2": "^0.1.8",
