@@ -3,7 +3,10 @@ const Koa = require('koa');
 const koaBody = require('koa-body');
 const serverStatic = require('koa-static2')
 const logger = require('koa-logger');
-var cors = require('koa-cors');
+const cors = require('koa-cors');
+
+// 配置mogondb的所有的模型
+const db = require('./common/db');
 
 const app = new Koa();
 const loggerWriter = require('./common/log');
@@ -20,8 +23,7 @@ app.use(cors());
 const router = require('./router.js');
 
 app.use(koaBody({multipart:true, formidable: {onFileBegin: (name, file)=>{
-  console.log(name, file);
-},keepExtensions: true, uploadDir: path.join(__dirname,'upload'), hash: 'md5'}}));
+},keepExtensions: false, uploadDir: path.join(__dirname,'upload'), hash: 'md5'}}));
 
 app.use(router.routes());
 app.use(router.allowedMethods());
