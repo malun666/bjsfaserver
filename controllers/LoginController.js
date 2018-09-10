@@ -13,7 +13,7 @@ module.exports = {
         });
         let token = jwt.encode(payload, jwtSecret);
         ctx.body = {
-          user2,
+          user: user2,
           code: 1,
           token
         };
@@ -21,7 +21,8 @@ module.exports = {
       }
     }
     ctx.body = {
-      code: -1
+      code: -1,
+      msg: '请求出错'
     };
   }
 };
