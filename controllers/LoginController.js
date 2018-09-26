@@ -15,14 +15,15 @@ module.exports = {
         ctx.body = {
           user: user2,
           code: 1,
+          msg: '登录成功',
           token
         };
         return;
       }
     }
     ctx.body = {
-      code: -1,
-      msg: '请求出错'
+      code: 0,
+      msg: '登录验证失败'
     };
   }
 };
