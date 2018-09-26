@@ -11,4 +11,4 @@ log4js.configure({
   categories: { default: {appenders: ['file'], level: 'debug'}}
 });
 
-module.exports = log4js.getLogger('app');
+module.exports = log4js.getLogger('app');   
