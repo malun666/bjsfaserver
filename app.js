@@ -5,7 +5,7 @@ const serverStatic = require('koa-static2');
 const logger = require('koa-logger');
 const cors = require('koa-cors');
 const koaJwt = require('koa-jwt'); //路由权限控制
-const jwt = require('jwt-simple');
+const config = require('./common/config');
 
 const router = require('./router.js');
 
@@ -39,9 +39,6 @@ app.use(
 );
 
 // #region 鉴权
-const jwtSecret = 'aicoder_com_ful';
-
-
 // Custom 401 handling if you don't want to expose koa-jwt errors to users
 app.use(function(ctx, next) {
   return next().catch(err => {
@@ -55,7 +52,7 @@ app.use(function(ctx, next) {
 });
 
 app.use(
-  koaJwt({ secret: jwtSecret }).unless({
+  koaJwt({ secret: config.jwtSecret }).unless({
     path: [/^\/login/]
   })
 );

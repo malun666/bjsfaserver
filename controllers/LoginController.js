@@ -1,6 +1,6 @@
 const jwt = require('jwt-simple');
 const db = require('../common/db');
-const jwtSecret = 'aicoder_com_ful';
+const jwtSecret = require('../common/config').jwtSecret;
 const tokenExpiresTime = 1000 * 60 * 60 * 24 * 7;
 module.exports = {
   async auth(ctx, next) {
