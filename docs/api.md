@@ -4,15 +4,11 @@
 
 ### 登陆获取token
 
-#### 接口地址
-
-`http://域名/login`
-
-例如：`http://aicoder.com/login`
-
-#### 请求方式：`POST`
-
-#### 数据类型：`application/x-www-form-urlencoded`
+类型|说明
+---|---
+接口地址|`http://域名/login`  <br>例如：`http://aicoder.com/login`
+请求方式|`POST`
+数据类型|`application/x-www-form-urlencoded`
 
 #### 请求参数
 
@@ -49,15 +45,11 @@
 
 ### 用户ID查询
 
-#### 接口地址
-
-`http://域名/user/:id`
-
-例如：`http://aicoder.com/user/29`
-
-#### 请求方式：`GET`
-
-#### 数据类型：`application/x-www-form-urlencoded`
+类型|说明
+---|---
+接口地址|`http://域名/user/:id`<br>例如：`http://aicoder.com/user/29`
+请求方式|`GET`
+数据类型|`application/x-www-form-urlencoded`
 
 #### 请求参数
 
