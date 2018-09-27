@@ -3,6 +3,7 @@ const controllers = require('./controllers/index');
 module.exports = function(router) {
 
   // User
+  router.get('/user', controllers.User.getUser);
   router.get('/user/:id', controllers.User.getUserById);
   router.delete('/user/:id', controllers.User.deleteUserById);
   router.post('/user', controllers.User.postUser);
@@ -10,6 +11,7 @@ module.exports = function(router) {
   router.patch('/user/:id', controllers.User.updateUser);
 
   // Product
+  router.get('/product', controllers.Product.getProduct);
   router.get('/product/:id', controllers.Product.getProductById);
   router.delete('/product/:id', controllers.Product.deleteProductById);
   router.post('/product', controllers.Product.postProduct);
@@ -17,6 +19,7 @@ module.exports = function(router) {
   router.patch('/product/:id', controllers.Product.updateProduct);
 
   // Shop
+  router.get('/shop', controllers.Shop.getShop);
   router.get('/shop/:id', controllers.Shop.getShopById);
   router.delete('/shop/:id', controllers.Shop.deleteShopById);
   router.post('/shop', controllers.Shop.postShop);
@@ -24,6 +27,7 @@ module.exports = function(router) {
   router.patch('/shop/:id', controllers.Shop.updateShop);
 
   // Message
+  router.get('/message', controllers.Message.getMessage);
   router.get('/message/:id', controllers.Message.getMessageById);
   router.delete('/message/:id', controllers.Message.deleteMessageById);
   router.post('/message', controllers.Message.postMessage);
@@ -31,6 +35,7 @@ module.exports = function(router) {
   router.patch('/message/:id', controllers.Message.updateMessage);
 
   // Menu
+  router.get('/menu', controllers.Menu.getMenu);
   router.get('/menu/:id', controllers.Menu.getMenuById);
   router.delete('/menu/:id', controllers.Menu.deleteMenuById);
   router.post('/menu', controllers.Menu.postMenu);

@@ -63,11 +63,7 @@ app.use(
 
 // 启用路由配置
 app.use(router.routes());
-app.use(router.allowedMethods({
-  throw: true,
-  notImplemented: () => new Boom.notImplemented(),
-  methodNotAllowed: () => new Boom.methodNotAllowed()
-}));
+app.use(router.allowedMethods());
 
 // 异常处理
 app.on('error', function(err) {

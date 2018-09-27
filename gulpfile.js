@@ -45,7 +45,7 @@ gulp.task('automodel',['clean'], function() {
 });
 
 gulp.task('default', function() {
-  gulp.watch(['model/**/*.*'], ['automodel']);
+  gulp.watch(['model/**/*.*', 'util/**/*.tpl'], ['automodel']);
 });
 
 function compileArtTemplate(file, data) {

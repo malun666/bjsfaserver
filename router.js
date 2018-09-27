@@ -12,6 +12,7 @@ router.get('/', (ctx) => {
 
 router.post('/login', controllers.Login.auth)
 
+router.get('/user', controllers.User.getUser);
 // router.get('/user/:id', controllers.User.getUserById);
 // router.delete('/user/:id', controllers.User.deleteUserById);
 // router.post('/user', controllers.User.postUser);
