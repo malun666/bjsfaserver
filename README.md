@@ -9,6 +9,7 @@
 + koa-router
 + gulp
 + art-template
++ jwt
 
 ## 启动应用
 
@@ -61,25 +62,25 @@ nodemon app.js
 接口地址符合`RestFul`风格。
 
 + 添加
-  1. 地址: `POST /api/模型名字`
-  1. `header`中必须添加 `Authrization`对应的jwt的token.
+  > 地址: `POST /api/模型名字`
+  > `header`中必须添加 `Authrization`对应的jwt的token.
 + 修改
-  1. 地址:`PUT /api/模型名字/:id`
-  1. `header`中必须添加 `Authrization`对应的jwt的token.
-  1. 支持`PATCH协议`
+  > 地址:`PUT /api/模型名字/:id`
+  > `header`中必须添加 `Authrization`对应的jwt的token.
+  > 支持`PATCH协议`
 + 删除
-  1. 地址:`DELETE /api/模型名字/:id`
-  1. `header`中必须添加 `Authrization`对应的jwt的token.
+  > 地址:`DELETE /api/模型名字/:id`
+  > `header`中必须添加 `Authrization`对应的jwt的token.
 + 查询id
-  1. 地址:`GET /api/模型名字/:id`
-  1. `header`中必须添加 `Authrization`对应的jwt的token.
+  > 地址:`GET /api/模型名字/:id`
+  > `header`中必须添加 `Authrization`对应的jwt的token.
   
 ### 复合查询
 
-1. 地址:`GET /api/模型名字`
-1. `header`中必须添加 `Authrization`对应的jwt的token.
-1. 分页: 当前页请求参数中,添加 `page`, 默认不分页.一页大小,请在请求参数中添加`limit`或`pageSize`. 例如:   `page=9&limit=10`,一页10条,第9页.
-1. 排序: 升序: `sort_asc=排序字段名`, 降序:`sort_desc=排序字段名`
-1. 等于过滤: `字段名_eq=等于的值`, 查询某个字段必须等于什么...
-1. 模糊查询过滤:`字段名_like=模糊查询的值`
+- 地址:`GET /api/模型名字`
+- `header`中必须添加 `Authrization`对应的jwt的token.
+- 分页: 当前页请求参数中,添加 `page`, 默认不分页.一页大小,请在请求参数中添加`limit`或`pageSize`. 例如:   `page=9&limit=10`,一页10条,第9页.
+- 排序: 升序: `sort_asc=排序字段名`, 降序:`sort_desc=排序字段名`
+- 等于过滤: `字段名_eq=等于的值`, 查询某个字段必须等于什么...
+- 模糊查询过滤:`字段名_like=模糊查询的值`
   
