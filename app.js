@@ -5,12 +5,14 @@ const serverStatic = require('koa-static2');
 const logger = require('koa-logger');
 const cors = require('koa-cors');
 const koaJwt = require('koa-jwt'); //路由权限控制
+const Boom = require('boom');
 const config = require('./common/config');
 
 const router = require('./router.js');
 
 // 配置mogondb的所有的模型
-const db = require('./common/db');
+require('./common/db');
+
 const app = new Koa();
 const loggerWriter = require('./common/log');
 
@@ -44,7 +46,7 @@ app.use(function(ctx, next) {
   return next().catch(err => {
     if (401 == err.status) {
       ctx.status = 401;
-      ctx.body = 'Protected resource, use Authorization header to get access\n';
+      ctx.body = '您没有权限访问\n';
     } else {
       throw err;
     }
@@ -53,7 +55,7 @@ app.use(function(ctx, next) {
 
 app.use(
   koaJwt({ secret: config.jwtSecret }).unless({
-    path: [/^\/login/]
+    path: [/^\/api\/login/]
   })
 );
 
@@ -61,7 +63,11 @@ app.use(
 
 // 启用路由配置
 app.use(router.routes());
-app.use(router.allowedMethods());
+app.use(router.allowedMethods({
+  throw: true,
+  notImplemented: () => new Boom.notImplemented(),
+  methodNotAllowed: () => new Boom.methodNotAllowed()
+}));
 
 // 异常处理
 app.on('error', function(err) {

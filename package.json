@@ -6,6 +6,7 @@
   "author": "malun <malun666@126.com>",
   "license": "MIT",
   "dependencies": {
+    "boom": "^7.2.0",
     "jwt-simple": "^0.5.1",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",

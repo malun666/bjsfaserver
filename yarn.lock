@@ -60,6 +60,12 @@ bluebird@3.5.1:
   version "3.5.1"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
+boom@^7.2.0:
+  version "7.2.0"
+  resolved "http://registry.npm.taobao.org/boom/download/boom-7.2.0.tgz#2bff24a55565767fde869ec808317eb10c48e966"
+  dependencies:
+    hoek "5.x.x"
+
 bson@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/bson/download/bson-1.1.0.tgz#bee57d1fb6a87713471af4e32bcae36de814b5b0"
@@ -208,6 +214,10 @@ has-ansi@^2.0.0:
   resolved "http://registry.npm.taobao.org/has-ansi/download/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
   dependencies:
     ansi-regex "^2.0.0"
+
+hoek@5.x.x:
+  version "5.0.4"
+  resolved "http://registry.npm.taobao.org/hoek/download/hoek-5.0.4.tgz#0f7fa270a1cafeb364a4b2ddfaa33f864e4157da"
 
 http-assert@^1.3.0:
   version "1.3.0"
