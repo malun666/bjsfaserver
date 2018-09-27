@@ -11,6 +11,7 @@ router.get('/', (ctx) => {
 });
 
 router.post('/login', controllers.Login.auth)
+router.post('/login/init', controllers.Init.init)
 
 router.get('/user', controllers.User.getUser);
 // router.get('/user/:id', controllers.User.getUserById);

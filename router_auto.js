@@ -10,6 +10,14 @@ module.exports = function(router) {
   router.put('/user/:id', controllers.User.updateUser);
   router.patch('/user/:id', controllers.User.updateUser);
 
+  // Department
+  router.get('/department', controllers.Department.getDepartment);
+  router.get('/department/:id', controllers.Department.getDepartmentById);
+  router.delete('/department/:id', controllers.Department.deleteDepartmentById);
+  router.post('/department', controllers.Department.postDepartment);
+  router.put('/department/:id', controllers.Department.updateDepartment);
+  router.patch('/department/:id', controllers.Department.updateDepartment);
+
   // Product
   router.get('/product', controllers.Product.getProduct);
   router.get('/product/:id', controllers.Product.getProductById);

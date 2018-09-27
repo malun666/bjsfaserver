@@ -2,9 +2,21 @@ const mongoose = require('mongoose');
 exports.User = new mongoose.Schema({
   Name: { required: true, type: String, trim: true},
   Passwd: { required: true, type: String, trim: true},
+  Avatar: String,
+  CName: String,
+  Phone: String,
+  SubTitle: {type: String, default: '美好的一天又开始了！'},
+  LastLoginDate: { type: Date, default: Date.now},
+  Department: mongoose.Schema.Types.ObjectId,
   isDel: { type: Boolean, default: false}
 });
 
+exports.Department = new mongoose.Schema({
+  DepartmentName: {required: true, type: String, trim: true},
+  DNO: String,
+  SubTitle: String,
+  Avatar: String,
+});
 exports.Product = new mongoose.Schema({
   PName: {required: true, type: String, trim: true},
   PNO: String,
@@ -21,7 +33,10 @@ exports.Message = new mongoose.Schema({
   Content: {required: true, type: String, trim: true},
   Title: String,
   SubOn: String,
-  Readed: Boolean
+  Readed: Boolean,
+  From: mongoose.Schema.Types.ObjectId,
+  To: mongoose.Schema.Types.ObjectId,
+  MsgType: {type: Number, default: 1}
 });
 exports.Menu = new mongoose.Schema({
   MenuName: {required: true, type: String, trim: true},
