@@ -1,6 +1,7 @@
 const controllers = require('./controllers/index');
 // const router = require('koa-router')();
 const Router = require('koa-router');
+
 let router = new Router({
   prefix: '/api'
 });
@@ -11,12 +12,14 @@ router.get('/', (ctx) => {
 
 router.post('/login', controllers.Login.auth)
 
-router.get('/user/:id', controllers.User.getUserById);
-router.delete('/user/:id', controllers.User.deleteUserById);
-router.post('/user', controllers.User.postUser);
-router.put('/user/:id', controllers.User.updateUser);
-router.patch('/user/:id', controllers.User.updateUser);
+// router.get('/user/:id', controllers.User.getUserById);
+// router.delete('/user/:id', controllers.User.deleteUserById);
+// router.post('/user', controllers.User.postUser);
+// router.put('/user/:id', controllers.User.updateUser);
+// router.patch('/user/:id', controllers.User.updateUser);
 
 router.post('/uploadFile', controllers.File.postUploadFile);
+
+require('./router_auto')(router);
 
 module.exports = router;

@@ -5,8 +5,13 @@
   "repository": "git@github.com:malun666/bjsfaserver.git",
   "author": "malun <malun666@126.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "gulp"
+  },
   "dependencies": {
+    "art-template": "^4.13.1",
     "boom": "^7.2.0",
+    "gulp-clean": "^0.4.0",
     "jwt-simple": "^0.5.1",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
@@ -17,5 +22,8 @@
     "koa-static2": "^0.1.8",
     "log4js": "^3.0.5",
     "mongoose": "^5.2.14"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
