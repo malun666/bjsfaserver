@@ -50,6 +50,10 @@ nodemon app.js
 
 ## 如何使用
 
+### 端口
+
+web服务默认使用的是3002端口.
+
 ### 添加接口
 
 当应用启动后,直接往`model>Schemas.js` 添加Mongoose对应的Schema即可,gulp会自动监听变化,
