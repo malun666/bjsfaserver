@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 exports.User = new mongoose.Schema({
   Name: { required: true, type: String, trim: true},
+  PNO: {required: true, type: String, trim: true},
   Passwd: { required: true, type: String, trim: true},
+  CNO: String,
   Avatar: String,
   CName: String,
   Phone: String,
