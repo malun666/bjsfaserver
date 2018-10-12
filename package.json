@@ -21,6 +21,7 @@
     "koa-router": "^7.4.0",
     "koa-static2": "^0.1.8",
     "log4js": "^3.0.5",
+    "mockjs": "^1.0.1-beta3",
     "mongoose": "^5.2.14"
   },
   "devDependencies": {

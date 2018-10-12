@@ -7,7 +7,7 @@ let router = new Router({
 
 // 自定义的路由规则
 router.post('/login', controllers.Login.auth)
-router.post('/login/init', controllers.Init.init)
+router.get('/login/init', controllers.Init.init)
 router.post('/uploadFile', controllers.File.postUploadFile);
 // 设置自动生成的路由
 require('./router_auto')(router);

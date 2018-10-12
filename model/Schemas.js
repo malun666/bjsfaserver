@@ -7,7 +7,7 @@ exports.User = new mongoose.Schema({
   Avatar: String,
   CName: String,
   Phone: String,
-  SubTitle: {type: String, default: '美好的一天又开始了！'},
+  SubTitle: {type: String, default: 'aicoder！美好的一天又开始了！'},
   LastLoginDate: { type: Date, default: Date.now},
   Department: mongoose.Schema.Types.ObjectId,
   isDel: { type: Boolean, default: false}
