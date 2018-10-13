@@ -25,6 +25,7 @@ exports.Product = new mongoose.Schema({
   Stock: {type: Number, min: 0, default: 1000}
 });
 
+// 商铺的信息
 exports.Shop = new mongoose.Schema({
   SName: {required: true, type: String, trim: true},
   SNO: String,
