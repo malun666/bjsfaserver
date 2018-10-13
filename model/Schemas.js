@@ -31,6 +31,8 @@ exports.Shop = new mongoose.Schema({
   Address: String,
   Phone: String
 });
+
+// 消息
 exports.Message = new mongoose.Schema({
   Content: {required: true, type: String, trim: true},
   Title: String,
@@ -38,8 +40,11 @@ exports.Message = new mongoose.Schema({
   Readed: Boolean,
   From: mongoose.Schema.Types.ObjectId,
   To: mongoose.Schema.Types.ObjectId,
-  MsgType: {type: Number, default: 1}
+  MsgType: {type: Number, default: 1},
+  Img: String
 });
+
+// 菜单
 exports.Menu = new mongoose.Schema({
   MenuName: {required: true, type: String, trim: true},
   Url: String
