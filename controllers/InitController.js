@@ -47,6 +47,7 @@ module.exports = {
       user.Department = department[0]._id;
       await user.save();
     });
+    
     ctx.body = data;
   }
 };
