@@ -33,7 +33,7 @@ exports.Shop = new mongoose.Schema({
   Phone: String
 });
 
-// 消息
+// 消息  
 exports.Message = new mongoose.Schema({
   Content: {required: true, type: String, trim: true},
   Title: String,
