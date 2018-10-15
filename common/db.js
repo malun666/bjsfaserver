@@ -3,6 +3,7 @@ const fs = require('fs');
 const logger = require('../common/log');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/sfaserver');
+// mongoose.connect('mongodb://admin:aicoder_com@127.0.0.1:27021/bjsfa');
 const db = mongoose.connection;
 db.on('error', function(error) {
   logger.error(error);
@@ -12,7 +13,7 @@ db.on('error', function(error) {
 
 let models = {};
 db.once('open', function() {
-  let schemas = require('../model/schemas');
+  let schemas = require('../model/Schemas.js');
   for(prop of Object.keys(schemas)) {
     models[prop] = mongoose.model(prop, schemas[prop]);
   }
