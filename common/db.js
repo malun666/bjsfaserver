@@ -6,6 +6,8 @@ mongoose.connect('mongodb://localhost/sfaserver');
 const db = mongoose.connection;
 db.on('error', function(error) {
   logger.error(error);
+  console.log('mongod 链接失败,请打开mongodb服务,重启此服务!');
+  console.log(`错误消息:\r\n${error}`);
 });
 
 let models = {};
