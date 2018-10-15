@@ -5,8 +5,12 @@ const tokenExpiresTime = 1000 * 60 * 60 * 24 * 7;
 module.exports = {
   async auth(ctx, next) {
     const user = ctx.request.body;
-    if (user && user.Name && user.Passwd) {
-      let user2 = await db.User.findOne({ Name: user.Name, Passwd: user.Passwd });
+    if (user && user.PNO && user.Passwd && user.CNO) {
+      console.log('user :', user);
+      
+      let user2 = await db.User.findOne(user).exec();
+      console.log('user2 :', user2);
+      
       if (user2) {
         let payload = Object.assign(user2, {
           exp: Date.now() + tokenExpiresTime
