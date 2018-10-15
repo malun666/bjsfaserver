@@ -1,0 +1,29 @@
+[2018-09-27T13:28:12.651] [ERROR] app - TypeError: Boom.methodNotAllowed is not a constructor
+    at Object.methodNotAllowed (D:\work\gitdata\bjsfaserver\app.js:69:27)
+    at D:\work\gitdata\bjsfaserver\node_modules\koa-router\lib\router.js:441:47
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2018-09-27T13:29:54.774] [ERROR] app - TypeError: Boom.methodNotAllowed is not a constructor
+    at Object.methodNotAllowed (D:\work\gitdata\bjsfaserver\app.js:69:27)
+    at D:\work\gitdata\bjsfaserver\node_modules\koa-router\lib\router.js:441:47
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2018-09-27T13:35:33.338] [ERROR] app - { MongoError: Skip value must be non-negative, but received: -5
+    at queryCallback (D:\work\gitdata\bjsfaserver\node_modules\mongodb-core\lib\cursor.js:248:25)
+    at D:\work\gitdata\bjsfaserver\node_modules\mongodb-core\lib\connection\pool.js:532:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+  ok: 0,
+  errmsg: 'Skip value must be non-negative, but received: -5',
+  code: 2,
+  codeName: 'BadValue',
+  name: 'MongoError',
+  [Symbol(mongoErrorContextSymbol)]: {} }
+[2018-09-27T16:46:08.266] [ERROR] app - TypeError: Cannot read property 'find' of undefined
+    at getUser (D:\work\gitdata\bjsfaserver\controllers\Auto\UserController.js:55:33)
+    at dispatch (D:\work\gitdata\bjsfaserver\node_modules\koa-compose\index.js:44:32)
+    at next (D:\work\gitdata\bjsfaserver\node_modules\koa-compose\index.js:45:18)
+    at D:\work\gitdata\bjsfaserver\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\work\gitdata\bjsfaserver\node_modules\koa-compose\index.js:44:32)
+    at D:\work\gitdata\bjsfaserver\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\work\gitdata\bjsfaserver\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\work\gitdata\bjsfaserver\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at jwt (D:\work\gitdata\bjsfaserver\node_modules\koa-jwt\lib\index.js:72:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
