@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+// 用户信息
 exports.User = new mongoose.Schema({
   Name: { required: true, type: String, trim: true},
   PNO: {required: true, type: String, trim: true},
