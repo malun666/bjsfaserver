@@ -13,6 +13,7 @@ exports.User = new mongoose.Schema({
   isDel: { type: Boolean, default: false}
 });
 
+// 部门信息表
 exports.Department = new mongoose.Schema({
   DepartmentName: {required: true, type: String, trim: true},
   DNO: String,
