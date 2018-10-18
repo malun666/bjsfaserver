@@ -19,6 +19,8 @@ exports.Department = new mongoose.Schema({
   SubTitle: String,
   Avatar: String,
 });
+
+// 商品信息
 exports.Product = new mongoose.Schema({
   PName: {required: true, type: String, trim: true},
   PNO: String,
@@ -28,9 +30,16 @@ exports.Product = new mongoose.Schema({
 // 商铺的信息
 exports.Shop = new mongoose.Schema({
   SName: {required: true, type: String, trim: true},
+  Address: String,
+  Position: String,
   SNO: String,
   Address: String,
-  Phone: String
+  Area: String,
+  Phone: String,
+  Master: String,
+  Photoes: String,
+  DistributionChannels: String,
+  UserId: mongoose.Schema.Types.ObjectId
 });
 
 // 消息  
