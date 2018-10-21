@@ -3,7 +3,7 @@ const fs = require('fs');
 const logger = require('../common/log');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/sfaserver');
-// mongoose.connect('mongodb://admin:aicoder_com@127.0.0.1:27021/bjsfa');
+// mongoose.connect('mongodb://admin:aicoder_com@hamkd.com:27021/bjsfa');
 const db = mongoose.connection;
 db.on('error', function(error) {
   logger.error(error);
