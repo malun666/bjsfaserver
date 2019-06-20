@@ -33,15 +33,16 @@ server.use('/api/auth', (req, res, next) => {
 
 // 用户登录成功
 server.post('/api/userlogin', (req, res) => {
-  let userName = req.body.username;
+  let CNO = req.body.CNO;
+  let PNO = req.body.PNO;
   let password = req.body.password;
-  let loginUser = userArr.find((item) => item.username == userName && item.password == password);
+  let loginUser = userArr.find((item) => item.CNO == CNO && item.password == password && item.PNO== PNO);
   if(loginUser) {
     res.jsonp({
       user: loginUser,
       code: 1,
       msg: '授权成功',
-      token: 'jfksdjfldsjflk===>aicoder.com'
+      token: `absjlsdjflasjflsh&${loginUser.id}`
     });
   } 
   else {
