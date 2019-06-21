@@ -70,7 +70,7 @@ module.exports =Mock.mock({
   "notice|320": [{
     "id|+1": 1000,
     title: '@ctitle(10, 20)',
-    text: '@cparagraph(50, 300)',
+    text: '@cparagraph(50, 100)',
     to: '销售部门全体同仁',
     subby: 1001,
     date: '2016.5.12-2016.5.14',

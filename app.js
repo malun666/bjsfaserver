@@ -32,11 +32,12 @@ server.use('/api/auth', (req, res, next) => {
 });
 
 // 用户登录成功
-server.post('/api/userlogin', (req, res) => {
+server.post('/api/login', (req, res) => {
   let CNO = req.body.CNO;
   let PNO = req.body.PNO;
-  let password = req.body.password;
-  let loginUser = userArr.find((item) => item.CNO == CNO && item.password == password && item.PNO== PNO);
+  let password = req.body.Passwd;
+  let loginUser = data.user.find((item) => item.CNO == CNO && item.password == password && item.PNO== PNO);
+  // console.log(data.user);
   if(loginUser) {
     res.jsonp({
       user: loginUser,
@@ -79,6 +80,14 @@ server.use('/save', (req, res) => {
   fs.writeFileSync(path.join(__dirname, `db${Date.now()}.json`), JSON.stringify(obj));
   res.json({msg: 'ok'});
 });
+
+server.get('/api/getUserProgress', (req, res) => {
+  res.json({
+    monthPercent: 0.17,
+    sale: '77%',
+    totalShops: 266
+  });
+})
 
 server.use('/api/auth', router);
 
