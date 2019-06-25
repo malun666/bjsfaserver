@@ -7,6 +7,7 @@ const captcha = require('svg-captcha');
 const router = jsonServer.router(data);
 const multer = require('multer');
 const middlewares = jsonServer.defaults();
+const Mock = require('mockjs');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -89,8 +90,30 @@ server.get('/api/getUserProgress', (req, res) => {
   });
 })
 
+server.get('/api/message', (req, res) => {
+  let date = req.query.date? new Date(req.query.date) : Date.now() ,
+  limit = req.query.limit ? parseInt(req.query.limit) : 10,
+  isloadelater = !!req.query.isloadelater;
+  data.notice.sort((a, b) => {
+    let c = new Date(a.SubDate);
+    let d = new Date(b.SubDate);
+    return c - d;
+  });
+  let resArr = [];
+  data.notice.forEach(item => {
+    let temp = new Date(item.SubDate);
+    if(isloadelater && temp - date < 0) {
+      resArr.push(item);
+    }
+    if(!isloadelater && temp - date >=0  ) {
+      resArr.push(item);
+    }
+  });
+  res.json({data:{messages:resArr.slice(0, limit)}, code: 1, msg: 'ok'});
+});
+
 server.use('/api/auth', router);
 
 server.listen(8889, () => {
-  console.log('JSON Server is running');
+  console.log('JSON Server is running, http://localhost:8889');
 });

@@ -73,6 +73,7 @@ module.exports =Mock.mock({
     text: '@cparagraph(50, 100)',
     to: '销售部门全体同仁',
     subby: 1001,
+    SubDate: '@datetime("yyyy/MM/dd hh:mm:ss")',
     date: '2016.5.12-2016.5.14',
     address: '北京双龙峡冰瀑',
     del: 0
