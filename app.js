@@ -55,6 +55,7 @@ server.post('/api/login', (req, res) => {
   }
 });
 
+// 验证码接口
 server.get('/api/code', (req,res)=>{
   const cap = captcha.create();
   // req.session.captcha = cap.text; // session 存储
@@ -75,13 +76,14 @@ server.all('/api/upload', upload.single('imgF'), function(req, res, next) {
   res.json({ img: `/server/upload/${file.filename}` });
 });
 
-
+// 保存当前数据接口
 server.use('/save', (req, res) => {
   let obj = {...router.db.__wrapped__};
   fs.writeFileSync(path.join(__dirname, `db${Date.now()}.json`), JSON.stringify(obj));
   res.json({msg: 'ok'});
 });
 
+// 获取当前月进度接口
 server.get('/api/getUserProgress', (req, res) => {
   res.json({
     monthPercent: 0.17,
@@ -90,6 +92,7 @@ server.get('/api/getUserProgress', (req, res) => {
   });
 })
 
+// 获得所有的消息接口
 server.get('/api/message', (req, res) => {
   let date = req.query.date? new Date(req.query.date) : Date.now() ,
   limit = req.query.limit ? parseInt(req.query.limit) : 10,
@@ -112,6 +115,31 @@ server.get('/api/message', (req, res) => {
   res.json({data:{messages:resArr.slice(0, limit)}, code: 1, msg: 'ok'});
 });
 
+
+
+// 所有的api的请求都要求登陆后才能获取到对应的数据
+server.use('/api/auth', (req, res, next) => {
+  if (req.get('Authorization')) {
+    next();
+  } else {
+    res.status(401).jsonp({
+      code: 8,
+      msg: '用户没有登录，不能访问'
+    });
+  }
+});
+// 设置消息已读
+server.post('/api/auth/notice/:id', (req, res) => {
+  let index = data.notice.findIndex(item => item.id === parseInt(req.params.id));
+  if(index > 0) {
+    data.notice[index].isRead = true;
+  }
+  res.jsonp({
+    code: 1,
+    msg: '设置成功！',
+    data: null
+  });
+});
 server.use('/api/auth', router);
 
 server.listen(8889, () => {
