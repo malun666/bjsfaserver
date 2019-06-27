@@ -76,6 +76,7 @@ module.exports =Mock.mock({
     SubDate: '@datetime("yyyy/MM/dd hh:mm:ss")',
     date: '2016.5.12-2016.5.14',
     address: '北京双龙峡冰瀑',
+    isRead: '@boolean',
     del: 0
   }],
   "shop|202": [{
