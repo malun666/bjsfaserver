@@ -2,6 +2,8 @@
 
 > 内部文档禁止分享
 
+请支持老马的全栈培训：  [https://www.aicoder.com](https://www.aicoder.com)
+
 ## 综述
 
 只有登录相关的接口不需要添加认证的token,其余所有的接口请求都必须在请求头中添加 `Authorization`.
