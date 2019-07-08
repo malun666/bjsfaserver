@@ -350,3 +350,124 @@ admin1|aicoder.com|是
     "data": null
 }
 ```
+
+## 店铺相关接口
+
+### 获取单个店铺
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/shop/:id'`<br>例如：`http://aicoder.com/api/auth/shop/1001`
+请求方式|`GET`
+数据类型|`application/x-www-form-urlencoded`
+
+#### 获取单个店铺请求参数
+
+`header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 获取单个店铺返回值
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|店铺主键
+2|pid|Number|所属渠道，0代表主店铺
+3|name|String|店铺名字
+4|bossName|String|商店负责人名字
+5|subon|String|店铺创建时间
+6|phone|String| 店铺电话
+7|distance|Number|店铺的距离
+8|address|String|店铺地址 "四川省 成都市 崇州市",
+9|type|String|店铺类型
+10|imgUrl| Array|店铺图片 `{alt: '图片说明', url: '图片地址'}`
+11|coordinate| Object| 经纬度，`{ "Lng": 经度, "Lat": 纬度}`
+
+#### 获取单个店铺返回实例
+
+```js
+{
+    "id": 30001,
+    "pid": 231093,
+    "name": "孔杰 AICODER超市",
+    "bossName": "薛 老板",
+    "subon": "2019-05-08 16:54:26",
+    "phone": 17835816757,
+    "distance": 2872,
+    "del": 0,
+    "address": "四川省 成都市 崇州市",
+    "type": "便利店",
+    "imgUrl": [
+      {
+          "alt": "三样却区西",
+          "url": "http://dummyimage.com/500x500/02adea&text=aicoder.com"
+      }
+    ],
+    "coordinate": {
+      "Lng": 98.904543148,
+      "Lat": 33.4410827808
+    }
+}
+```
+
+### 获取所有店铺
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/shop?_page=1&_limit=10&_order=asc&_sort=distance'`<br>例如：`http://localhost:8889/api/auth/shop?_page=1&_limit=10&_order=asc&_sort=distance`
+请求方式|`GET`
+数据类型|`application/x-www-form-urlencoded`
+
+#### 获取所有店铺请求参数
+
+`header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 获取所有店铺返回值
+
+后台返回是一个数组，数组中的元素类型为：
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|店铺主键
+2|pid|Number|所属渠道，0代表主店铺
+3|name|String|店铺名字
+4|bossName|String|商店负责人名字
+5|subon|String|店铺创建时间
+6|phone|String| 店铺电话
+7|distance|Number|店铺的距离
+8|address|String|店铺地址 "四川省 成都市 崇州市",
+9|type|String|店铺类型
+10|imgUrl| Array|店铺图片 `{alt: '图片说明', url: '图片地址'}`
+11|coordinate| Object| 经纬度，`{ "Lng": 经度, "Lat": 纬度}`
+
+#### 获取所有店铺返回实例
+
+```js
+[
+    {
+        "id": 30031,
+        "pid": 112,
+        "name": "徐磊 AICODER超市",
+        "bossName": "刘 老板",
+        "subon": "2019-05-08 16:54:26",
+        "phone": "17835816757",
+        "distance": 456,
+        "del": 0,
+        "address": "河北省 石家庄市 井陉矿区",
+        "type": "便利店",
+        "imgUrl": [
+            {
+                "alt": "广革引非府电",
+                "url": "http://dummyimage.com/500x500/02adea&text=aicoder.com"
+            },
+            {
+                "alt": "器先以",
+                "url": "http://dummyimage.com/500x500/02adea&text=aicoder.com"
+            }
+        ],
+        "coordinate": {
+            "Lng": 102.774287582,
+            "Lat": 35.705760237
+        }
+    },
+    ...
+]
+```

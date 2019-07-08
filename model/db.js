@@ -81,15 +81,23 @@ module.exports =Mock.mock({
   }],
   "shop|202": [{
     "id|+1": 30001,
-    pid: 231093,
+    pid: "@integer(100, 120)",
     name: '@cname ' + 'AICODER超市',
     bossName: '@cfirst ' + '老板',
     subon: '2019-05-08 16:54:26',
-    phone: 17835816757,
-    distance: '200m',
+    phone: '17835816757',
+    "distance": "@integer(100, 6000)",
     del: 0,
     address: "@county(true)",
     type: "@pick(['混合型','商超','便利店', '批发市场'])",
+    "imgUrl|1-3": [{
+      alt: '@ctitle',
+      url: '@image("500x500", "#02adea", "aicoder.com")'
+    }],
+    "coordinate": {
+      Lng:"@float(95.1000000000, 118.0000000, 9, 10)",
+      Lat: "@float(24.1000000000, 41.0000000, 9, 10)"
+    }
   }],
   "warehouse|20": [{
     "id|+1": 100,
