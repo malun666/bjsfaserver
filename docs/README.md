@@ -418,7 +418,12 @@ admin1|aicoder.com|是
 
 #### 获取所有店铺请求参数
 
-`header`中必须添加 `Authrization`对应的jwt的token.
+key|value
+---|---
+Lng| 经度
+Lat| 纬度
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
 
 #### 获取所有店铺返回值
 
