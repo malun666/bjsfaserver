@@ -94,7 +94,7 @@ server.get('/api/getUserProgress', (req, res) => {
 
 // 获得所有的消息接口
 server.get('/api/message', (req, res) => {
-  let date = req.query.date? new Date(req.query.date) : Date.now() ,
+  let date = req.query.date? new Date(parseInt(req.query.date)) : Date.now() ,
   limit = req.query.limit ? parseInt(req.query.limit) : 10,
   isloadelater = !!req.query.isloadelater;
   data.notice.sort((a, b) => {
