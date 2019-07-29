@@ -92,27 +92,29 @@ server.get('/api/getUserProgress', (req, res) => {
   });
 })
 
+let noticePageIndex = 1;
 // 获得所有的消息接口
 server.get('/api/message', (req, res) => {
   let date = req.query.date? new Date(parseInt(req.query.date)) : Date.now() ,
-  limit = req.query.limit ? parseInt(req.query.limit) : 10,
-  isloadelater = !!req.query.isloadelater;
-  data.notice.sort((a, b) => {
-    let c = new Date(a.SubDate);
-    let d = new Date(b.SubDate);
-    return c - d;
-  });
-  let resArr = [];
-  data.notice.forEach(item => {
-    let temp = new Date(item.SubDate);
-    if(isloadelater && temp - date < 0) {
-      resArr.push(item);
-    }
-    if(!isloadelater && temp - date >=0  ) {
-      resArr.push(item);
-    }
-  });
-  res.json({data:{messages:resArr.slice(0, limit)}, code: 1, msg: 'ok'});
+    limit = req.query.limit ? parseInt(req.query.limit) : 10;
+  // isloadelater = !!req.query.isloadelater;
+  // data.notice.sort((a, b) => {
+  //   let c = new Date(a.SubDate);
+  //   let d = new Date(b.SubDate);
+  //   return c - d;
+  // });
+  // let resArr = [];
+  // data.notice.forEach(item => {
+  //   let temp = new Date(item.SubDate);
+  //   if(isloadelater && temp - date < 0) {
+  //     resArr.push(item);
+  //   }
+  //   if(!isloadelater && temp - date >=0  ) {
+  //     resArr.push(item);
+  //   }
+  // });
+  // console.log(noticePageIndex, limit, data.notice)
+  res.json({data:{messages:data.notice.slice((noticePageIndex++)*limit, noticePageIndex*limit)}, code: 1, msg: 'ok'});
 });
 
 
