@@ -8,22 +8,33 @@
 </head>
 <body>
     
-<iframe id="geoPage" width=0 height=0 frameborder=0  style="display:none;" scrolling="no"
+<!-- <iframe id="geoPage" width=0 height=0 frameborder=0  style="display:none;" scrolling="no"
 src="https://apis.map.qq.com/tools/geolocation?key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp">
-</iframe>
-
+</iframe> -->
+<script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
 <script>
-    var loc;
-window.addEventListener('message', function(event) {
-    // 接收位置信息
-     loc = event.data;
-    console.log('location', loc);
-}, false)       ;
-setTimeout(function() {
-    if (!loc) {
-       console.log('定位超时')
-    }
-}, 6000) 
+//     var loc;
+// window.addEventListener('message', function(event) {
+//     // 接收位置信息
+//      loc = event.data;
+//     console.log('location', loc);
+// }, false)       ;
+// setTimeout(function() {
+//     if (!loc) {
+//        console.log('定位超时')
+//     }
+// }, 6000) 
+
+var geolocation = new qq.maps.Geolocation("OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77", "myapp");
+geolocation.getLocation(function (position) {
+    // document.getElementById("demo").innerHTML += "序号：" + positionNum;
+    // document.getElementById("demo").appendChild(document.createElement('pre')).innerHTML = JSON.stringify(position, null, 4);
+    // document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+    console.log('position :', position);
+    
+}, function(err) {
+    console.log('定位失败！！！');
+},{})
 </script>
 </body>
 </html>

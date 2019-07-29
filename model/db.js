@@ -79,6 +79,12 @@ module.exports =Mock.mock({
     isRead: '@boolean',
     del: 0
   }],
+  "shopSales|202": [{
+    "id|+1": 30001,
+    "MonthSales": "@integer(100, 300020)",
+    "MonthAvgSales": "@integer(100, 300020)",
+    "DivSalesPercent": "@integer(1, 100)",
+  }],
   "shop|202": [{
     "id|+1": 30001,
     pid: "@integer(100, 120)",

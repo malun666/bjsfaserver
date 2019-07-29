@@ -495,3 +495,36 @@ Lat| 纬度
 请求方法： `PUT`
 请直接参考[上文中的：接口统一地址模型](#接口统一地址模型)
 
+### 获取店铺销售进度
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/shopSales/:id`<br>例如：`http://localhost:8889/api/auth/shopSales/30031`
+请求方式|`GET`
+数据类型|`application/x-www-form-urlencoded`
+
+#### 请求参数
+
+url中的id为商铺的主键
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 返回值
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|店铺主键
+2|MonthSales|Number|当前月销售
+3|MonthAvgSales|Number|月平均销售
+4|DivSalesPercent|Number|核心销售百分比
+
+#### 获取所有店铺返回实例
+
+```js
+{
+  "id": 30001,
+  "MonthSales": 162789,
+  "MonthAvgSales": 27398,
+  "DivSalesPercent": 19
+}
+```
