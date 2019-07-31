@@ -56,7 +56,7 @@ $.ajax({
   "method": "PUT",
   "headers": {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzcxODU3OTk5NzgsIm5hbWUiOiJzZGZmZmYifQ.WLVdU-GESQR6kJfUdLCBpNWUZMGAW6VsTk6lfAXC1xM",
-    "Content-Type": "application/x-www-form-urlencoded"
+    "Content-Type": "application/json"
   },
   "data": {
     "Name": "laoma2333"
@@ -177,7 +177,7 @@ $.ajax({
 |------|------------------------------------------------------|
 | 接口地址 | `http://192.168.1.130:8888/api/userlogin` |
 | 请求方式 | `POST`                                               |
-| 数据类型 | `application/x-www-form-urlencoded`                                   |
+| 数据类型 | `application/json`                                   |
 | 特殊要求 | 后台限制同一指纹浏览器,在1分钟内只能请求5次,超过次数认为是攻击,则禁止登录.             |
 
 #### 请求参数
@@ -266,7 +266,7 @@ admin1|aicoder.com|是
 ---|---
 接口地址|`http://域名/api/message'`<br>例如：`http://aicoder.com/api/message`
 请求方式|`GET`
-数据类型|`application/x-www-form-urlencoded`
+数据类型|`application/json`
 
 #### 请求参数
 
@@ -327,7 +327,7 @@ admin1|aicoder.com|是
 ---|---
 接口地址|`http://域名/api/auth/notice/:id'`<br>例如：`http://aicoder.com/api/auth/notice/1001`
 请求方式|`POST`
-数据类型|`application/x-www-form-urlencoded`
+数据类型|`application/json`
 
 #### 请求参数
 
@@ -359,7 +359,7 @@ admin1|aicoder.com|是
 ---|---
 接口地址|`http://域名/api/auth/shop/:id'`<br>例如：`http://aicoder.com/api/auth/shop/1001`
 请求方式|`GET`
-数据类型|`application/x-www-form-urlencoded`
+数据类型|`application/json`
 
 #### 获取单个店铺请求参数
 
@@ -414,7 +414,7 @@ admin1|aicoder.com|是
 ---|---
 接口地址|`http://域名/api/auth/shop?_page=1&_limit=10&_order=asc&_sort=distance'`<br>例如：`http://localhost:8889/api/auth/shop?_page=1&_limit=10&_order=asc&_sort=distance`
 请求方式|`GET`
-数据类型|`application/x-www-form-urlencoded`
+数据类型|`application/json`
 
 #### 获取所有店铺请求参数
 
@@ -501,7 +501,7 @@ Lat| 纬度
 ---|---
 接口地址|`http://域名/api/auth/shopSales/:id`<br>例如：`http://localhost:8889/api/auth/shopSales/30031`
 请求方式|`GET`
-数据类型|`application/x-www-form-urlencoded`
+数据类型|`application/json`
 
 #### 请求参数
 
@@ -528,3 +528,59 @@ url中的id为商铺的主键
   "DivSalesPercent": 19
 }
 ```
+
+### 店铺签到
+
+类型|说明
+---|---
+接口地址|`http://域名/api/SignIn`<br>例如：`http://localhost:8889/api/auth/shopSales/30031`
+请求方式|`POST`
+数据类型|`application/json`
+
+#### 请求参数
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
+2|shopId|Number|店铺主键
+3|SubOn|String|当天的日期
+4|imgs|Arrary|签到照片，数组内就是图片的url地址
+
+请求实例
+
+```js
+{
+  id: 1001,
+  shopId: 1002,
+  SubOn: "2019-07-31",
+  imgs: [
+      '/a.jpg'
+  ]
+}
+```
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 返回值
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
+2|shopId|Number|店铺主键
+3|SubOn|String|当天的日期
+4|imgs|Arrary|签到照片，数组内就是图片的url地址
+
+#### 获取所有店铺返回实例
+
+```js
+{
+  id: 1001,
+  shopId: 1002,
+  SubOn: "2019-07-31",
+  imgs: [
+      '/a.jpg'
+  ]
+}
+```
+
+> 店铺上传的照片，请参考之前的文件上传接口。

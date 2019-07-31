@@ -1,6 +1,14 @@
 const Mock = require('mockjs');
 let {Random} = Mock;
 module.exports =Mock.mock({
+  "SignIn":[{
+    id: 1001,
+    shopId: "",
+    SubOn: "2019-07-31",
+    imgs: [
+       '/a.jpg'
+    ]
+  }],
   user: [
     {
       id: 1000,
