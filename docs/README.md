@@ -533,7 +533,7 @@ url中的id为商铺的主键
 
 类型|说明
 ---|---
-接口地址|`http://域名/api/SignIn`<br>例如：`http://localhost:8889/api/auth/shopSales/30031`
+接口地址|`http://域名/api/signIn`<br>例如：`http://localhost:8889/api/signIn`
 请求方式|`POST`
 数据类型|`application/json`
 
