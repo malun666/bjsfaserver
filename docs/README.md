@@ -611,8 +611,9 @@ url中的id为商铺的主键
 2|title|Number|商品主键
 3|serial|Number|编码
 4|monery|Number|价格
-4|warehouseId|Number|仓库的id
-4|img|String|签到照片，数组内就是图片的url地址
+5|warehouseId|Number|仓库的id
+6|img|String|签到照片，数组内就是图片的url地址
+7|type|String|商品类型
 
 #### 获取商品的列表
 
@@ -624,6 +625,7 @@ url中的id为商铺的主键
     "serial": 34577,
     "monery": 308,
     "number": 203,
+    "type": "洗护",
     "warehouseId": 101,
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
   }
