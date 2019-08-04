@@ -143,7 +143,7 @@ module.exports =Mock.mock({
     serial: 34577,
     "monery|1-500": 28.00,
     "number|1-400": 22,
-    "repertory|100-120": 103,
+    "warehouseId|100-120": 103,
     img: "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
   }]
 });

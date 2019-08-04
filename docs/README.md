@@ -533,8 +533,68 @@ url中的id为商铺的主键
 
 类型|说明
 ---|---
-接口地址|`http://域名/api/signIn`<br>例如：`http://localhost:8889/api/signIn`
+接口地址|`http://域名/api/auth/signIn`<br>例如：`http://localhost:8889/api/auth/signIn`
 请求方式|`POST`
+数据类型|`application/json`
+
+#### 请求参数
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
+2|shopId|Number|店铺主键
+3|SubOn|String|当天的日期
+4|imgs|Arrary|签到照片，数组内就是图片的url地址
+
+请求实例
+
+```js
+{
+  id: 1001,
+  shopId: 1002,
+  subOn: "2019-07-31",
+  imgs: [
+      '/a.jpg'
+  ],
+  remark: ''
+}
+```
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 返回值
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
+2|shopId|Number|店铺主键
+3|SubOn|String|当天的日期
+4|imgs|Arrary|签到照片，数组内就是图片的url地址
+
+#### 获取所有店铺返回实例
+
+```js
+{
+  id: 1001,
+  shopId: 1002,
+  subOn: "2019-07-31",
+  imgs: [
+      '/a.jpg'
+  ],
+  remark: ""
+}
+```
+
+> 店铺上传的照片，请参考之前的文件上传接口。
+
+## 商品接口
+
+### 获取商品
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/goods`<br>例如：`http://localhost:8889/api/auth/signIn`
+请求方式|`GET`
 数据类型|`application/json`
 
 #### 请求参数
