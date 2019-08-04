@@ -614,6 +614,7 @@ url中的id为商铺的主键
 5|warehouseId|Number|仓库的id
 6|img|String|签到照片，数组内就是图片的url地址
 7|type|String|商品类型
+8|onsales|boolean|是否促销
 
 #### 获取商品的列表
 
@@ -627,6 +628,7 @@ url中的id为商铺的主键
     "number": 203,
     "type": "洗护",
     "warehouseId": 101,
+    "onsales": true,
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
   }
   ...
