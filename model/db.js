@@ -141,6 +141,7 @@ module.exports =Mock.mock({
     "id|+1":20,
     title: '@ctitle(3, 9)',
     serial: 34577,
+    "packageDimensions":"@pick(['12盒/箱', '2包/箱', '12个/包', '2kg/个'])",
     "monery|1-500": 28.00,
     "number|1-400": 22,
     "warehouseId|100-120": 103,
