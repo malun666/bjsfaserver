@@ -116,7 +116,7 @@ module.exports =Mock.mock({
   }],
   "warehouse|20": [{
     "id|+1": 100,
-    reponame: '@city ' + '仓库',
+    reponame: '@city '+ '@integer(1000, 9999) ' + '仓库',
     del: 0
   }],
   "trainingImg|30": [{

@@ -608,7 +608,7 @@ url中的id为商铺的主键
 序号|字段|类型|说明
 ---|---|---|---
 1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
-2|title|Number|商品主键
+2|title|Number|商品标题
 3|serial|Number|编码
 4|monery|Number|价格
 5|warehouseId|Number|仓库的id
@@ -633,6 +633,46 @@ url中的id为商铺的主键
     "packageDimensions": "12包/箱",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
   }
+  ...
+]
+```
+
+### 获取所有仓库信息
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/warehouse`<br>例如：`http://localhost:8889/api/auth/warehouse`
+请求方式|`GET`
+数据类型|`application/json`
+
+#### 获取所有仓库请求参数
+
+无
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
+
+#### 返回值
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|主键
+2|reponame|String|仓库名
+3|del|Number|删除标志，1为删除，0为未删除
+
+#### 返回所有仓库数据列表
+
+```js
+[
+  {
+      "id": 100,
+      "reponame": "秦皇岛市 8897 仓库",
+      "del": 0
+  },
+  {
+      "id": 101,
+      "reponame": "广州市 9020 仓库",
+      "del": 0
+  },
   ...
 ]
 ```
