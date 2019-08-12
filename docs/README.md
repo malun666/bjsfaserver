@@ -676,3 +676,34 @@ url中的id为商铺的主键
   ...
 ]
 ```
+
+## 订单相关接口
+
+### 添加订单接口
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/order`<br>例如：`http://localhost:8889/api/auth/order`
+请求方式|`POST`
+数据类型|`application/json`
+
+#### 请求参数
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|签到主键（项目中后台自动生成，目前只支持前台生成）
+2|shopId|Number|商铺Id
+3|warehouse|Array|仓库信息
+4|phone|String|电话
+5|address|String|送货地址
+
+`warehouse`是数组类型，数组中的每个元素字段如下：
+
+序号|字段|类型|说明
+---|---|---|---
+1|id|Number|仓库的id
+2|remark|String|备注信息
+3|goodsId|Number|商品编号
+4|count|Number|数量
+
+> `header`中必须添加 `Authrization`对应的jwt的token.
