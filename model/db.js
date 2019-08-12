@@ -145,7 +145,7 @@ module.exports =Mock.mock({
     "packageDimensions":"@pick(['12盒/箱', '2包/箱', '12个/包', '2kg/个'])",
     "monery|1-500": 28.00,
     "number|1-400": 22,
-    "warehouseId|100-120": 103,
+    "warehouseId|101-119": 103,
     "onsales": "@boolean",
     "type": "@pick(['洗护','食品','宝洁'])",
     img: "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
