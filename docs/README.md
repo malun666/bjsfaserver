@@ -707,3 +707,57 @@ url中的id为商铺的主键
 4|count|Number|数量
 
 > `header`中必须添加 `Authrization`对应的jwt的token.
+
+## 用户相关接口
+
+### 修改用户数据
+
+类型|说明
+---|---
+接口地址|`http://域名/api/auth/user/:id'`<br>例如：`http://aicoder.com/api/auth/user/1000`
+请求方式|`PUT`
+数据类型|`application/json`
+
+#### 请求参数
+
+例如：
+
+```js
+{
+  id: 1000,
+  CNO: '1000',
+  PNO: 1000,
+  username: 'wyd',
+  password: 'aicoder.com',
+  del: false,
+  active: true, //  激活
+  avatar: 'http://n.hamkd.com/server/img/a1.png',
+  name: '张三',
+  department: '市场部',
+  lastLogin: "2019-06-19 20:38:45",
+  mail: Random.email(),
+  phone: '189222222',
+  isTeacher: true
+}
+```
+
+#### 返回实例
+
+```js
+{
+  id: 1000,
+  CNO: '1000',
+  PNO: 1000,
+  username: 'wyd',
+  password: 'aicoder.com',
+  del: false,
+  active: true, //  激活
+  avatar: 'http://n.hamkd.com/server/img/a1.png',
+  name: '张三',
+  department: '市场部',
+  lastLogin: "2019-06-19 20:38:45",
+  mail: Random.email(),
+  phone: '189222222',
+  isTeacher: true
+}
+```
