@@ -251,12 +251,12 @@ $.ajax({
 
 当前可以用的用户名密码：
 
-用户名|密码|是否是老师
+用户名|公司编号|员工号|密码|是否是老师
 ---|---|---
-ngr|aicoder.com|否
-wyd|aicoder.com|是
-admin|aicoder.com|是
-admin1|aicoder.com|是
+ngr| 1000| 1000|aicoder.com|否
+wyd| 1000| 1001|aicoder.com|是
+admin| 1000| 1002|aicoder.com|是
+admin1| 1000| 1003|aicoder.com|是
 
 ## 通知接口相关
 
