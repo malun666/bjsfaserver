@@ -20,7 +20,7 @@ module.exports =Mock.mock({
       password: 'aicoder.com',
       del: false,
       active: true, //  激活
-      avatar: 'http://n.hamkd.com/server/img/a1.png',
+      avatar: 'http://localhost:8889/server/img/a1.png',
       name: '张三',
       department: '市场部',
       lastLogin: "2019-06-19 20:38:45",
@@ -36,7 +36,7 @@ module.exports =Mock.mock({
       password: 'aicoder.com',
       del: false,
       active: true, //  激活
-      avatar: 'http://n.hamkd.com/server/img/a1.png',
+      avatar: 'http://localhost:8889/server/img/a1.png',
       name: '李思',
       department: '市场部',
       lastLogin: "2019-06-19 20:38:45",
@@ -52,7 +52,7 @@ module.exports =Mock.mock({
       password: 'aicoder.com',
       del: false,
       active: true, //  激活
-      avatar: 'http://n.hamkd.com/server/img/a1.png',
+      avatar: 'http://localhost:8889/server/img/a1.png',
       name: '李思',
       department: '市场部',
       lastLogin: "2019-06-19 20:38:45",
@@ -68,7 +68,7 @@ module.exports =Mock.mock({
       password: 'aicoder.com',
       del: false,
       active: true, //  激活
-      avatar: 'http://n.hamkd.com/server/img/a1.png',
+      avatar: 'http://localhost:8889/server/img/a1.png',
       name: '李思',
       department: '市场部',
       lastLogin: "2019-06-19 20:38:45",
