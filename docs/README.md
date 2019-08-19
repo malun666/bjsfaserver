@@ -133,23 +133,23 @@ $.ajax({
 
 ## 验证码地址
 
-地址：http://192.168.1.130:8888/api/code
+地址：http://localhost:8889/api/code
 
 后台返回 svg的内容。
 
 前端使用：
 
 ```html
-<embed src="http://192.168.1.130:8888/api/code" type="image/svg+xml" />
+<embed src="http://localhost:8889/api/code" type="image/svg+xml" />
 或者图片
-<img src="http://192.168.1.130:8888/api/code" alt="Breaking Borders Logo" height="65" width="68">
+<img src="http://localhost:8889/api/code" alt="Breaking Borders Logo" height="65" width="68">
 ```
 
 ## 文件上传
 
 文件上传限制文件大小： 2M，目前只支持上传一张图片。
 
-上传地址： `http://192.168.1.130:8888/api/upload`
+上传地址： `http://localhost:8889/api/upload`
 
 请求参数：
 
@@ -175,7 +175,7 @@ $.ajax({
 
 | 类型   | 说明                                                   |
 |------|------------------------------------------------------|
-| 接口地址 | `http://192.168.1.130:8888/api/userlogin` |
+| 接口地址 | `http://localhost:8889/api/userlogin` |
 | 请求方式 | `POST`                                               |
 | 数据类型 | `application/json`                                   |
 | 特殊要求 | 后台限制同一指纹浏览器,在1分钟内只能请求5次,超过次数认为是攻击,则禁止登录.             |
