@@ -2,3 +2,4 @@ node_modules
 app.log
 upload
 *.log
+bjserver.tar.gz
